@@ -10,20 +10,15 @@ public class Appointment {
     @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @NotNull
-    private Long patientId;
+    @NotNull private Long patientId;
 
     private String patientName;
-
-    private Long doctorId; // optional
-
+    private Long doctorId;
     private String doctorName;
 
-    @NotBlank
-    private String datetime; // for simplicity store as string (ISO or human readable)
+    @NotBlank private String datetime;
 
-    @NotBlank
-    private String status; // Booked, Rescheduled, Cancelled
+    @NotBlank private String status;
 
     private Instant createdAt = Instant.now();
 

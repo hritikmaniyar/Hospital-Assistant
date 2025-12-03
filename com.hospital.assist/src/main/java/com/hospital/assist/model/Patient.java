@@ -10,23 +10,19 @@ public class Patient {
     @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @NotBlank
-    private String name;
+    @NotBlank private String name;
+
+    @Min(0) private Integer years;
 
     @Min(0)
-    private Integer years;
-
-    @Min(0) @Max(11)
+    @Max(11)
     private Integer months;
 
-    @Email @NotBlank
-    private String email;
+    @Email @NotBlank private String email;
 
-    @Pattern(regexp="\\d{10}") @NotBlank
-    private String phone;
+    @Pattern(regexp = "\\d{10}") @NotBlank private String phone;
 
-    @NotBlank
-    private String disease;
+    @NotBlank private String disease;
 
     private Instant createdAt = Instant.now();
 
